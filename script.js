@@ -92,14 +92,14 @@
   }
 
   var SCREENSHOTS = [
-    { src: "assets/screenshot-desktop-hires.png", srcset: "assets/screenshot-desktop-hires@2x.png 2x", alt: "QR Photo Transfer desktop app" },
-    { src: "assets/screenshot-phone-hires.png", srcset: "assets/screenshot-phone-hires@2x.png 2x", alt: "QR Photo Transfer on phone" },
-    { src: "assets/screenshot-qr-hires.png", srcset: "assets/screenshot-qr-hires@2x.png 2x", alt: "QR code session" },
-    { src: "assets/screenshot-desktop2-hires.png", srcset: "assets/screenshot-desktop2-hires@2x.png 2x", alt: "Desktop app window" },
-    { src: "assets/screenshot-transfer-hires.png", srcset: "assets/screenshot-transfer-hires@2x.png 2x", alt: "Transfer in progress" },
-    { src: "assets/screenshot-folder-hires.png", srcset: "assets/screenshot-folder-hires@2x.png 2x", alt: "Saved to folder" },
-    { src: "assets/screenshot-session-hires.png", srcset: "assets/screenshot-session-hires@2x.png 2x", alt: "Session screen" },
-    { src: "assets/screenshot-phone2-hires.png", srcset: "assets/screenshot-phone2-hires@2x.png 2x", alt: "Phone PWA" }
+    { src: "assets/screenshot-desktop-hires.png", srcset: "assets/screenshot-desktop-hires.png 2x", alt: "QR Photo Transfer desktop app" },
+    { src: "assets/screenshot-phone-hires.png", srcset: "assets/screenshot-phone-hires.png 2x", alt: "QR Photo Transfer on phone" },
+    { src: "assets/screenshot-qr-hires.png", srcset: "assets/screenshot-qr-hires.png 2x", alt: "QR code session" },
+    { src: "assets/screenshot-desktop2-hires.png", srcset: "assets/screenshot-desktop2-hires.png 2x", alt: "Desktop app window" },
+    { src: "assets/screenshot-transfer-hires.png", srcset: "assets/screenshot-transfer-hires.png 2x", alt: "Transfer in progress" },
+    { src: "assets/screenshot-folder-hires.png", srcset: "assets/screenshot-folder-hires.png 2x", alt: "Saved to folder" },
+    { src: "assets/screenshot-session-hires.png", srcset: "assets/screenshot-session-hires.png 2x", alt: "Session screen" },
+    { src: "assets/screenshot-phone2-hires.png", srcset: "assets/screenshot-phone2-hires.png 2x", alt: "Phone PWA" }
   ];
 
   function runScreenshotRotator() {
