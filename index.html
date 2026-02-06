@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download QR Photo Transfer</title>
+  <meta name="description" content="Move photos from phone to computer (and back) with a single QR scan. No cloud uploads, no WhatsApp or Discord—images go straight to your PC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+    <div class="bg-blob bg-blob-4"></div>
+    <div class="bg-blob bg-blob-5"></div>
+    <div class="bg-wave"></div>
+    <div class="bg-grain"></div>
+  </div>
+  <div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo-link" aria-label="QR Photo Transfer home">
+        <img src="assets/logo.png" alt="" class="logo" width="32" height="32" onerror="this.style.display='none'">
+        <span class="logo-text">QR Photo Transfer</span>
+      </a>
+      <nav class="nav">
+        <a href="#download" class="nav-link">Download</a>
+        <a href="https://github.com/JosueToe/QR-Photo-Transfer-releases/releases" class="nav-link" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/JosueToe/QR-Photo-Transfer-releases" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="download">
+      <div class="hero-inner">
+        <div class="hero-polaroids hero-polaroids-left" aria-hidden="true">
+          <div class="polaroid polaroid-1">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-desktop.png" srcset="assets/screenshot-desktop@2x.png 2x" alt="QR Photo Transfer desktop app" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-2">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-phone.png" srcset="assets/screenshot-phone@2x.png 2x" alt="QR Photo Transfer on phone" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-3">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-qr.png" srcset="assets/screenshot-qr@2x.png 2x" alt="QR code session" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-4">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-desktop2.png" srcset="assets/screenshot-desktop2@2x.png 2x" alt="Desktop app window" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+        </div>
+        <div class="hero-center">
+          <div class="hero-logo-wrap">
+            <img src="assets/logo.png" alt="" class="hero-logo" width="72" height="72" onerror="this.style.display='none'">
+          </div>
+          <p class="hero-label">Desktop</p>
+          <h1 class="hero-title">Download QR Photo Transfer.</h1>
+          <div class="hero-tagline-wrap" aria-live="polite">
+            <p class="hero-tagline" id="hero-tagline">From phone to computer, no cloud in between.</p>
+          </div>
+          <p class="hero-subtitle">Available for Windows, macOS, and Linux.</p>
+          <a id="hero-download" href="#" class="btn btn-primary">Download for …</a>
+          <p id="hero-caption" class="hero-caption" aria-hidden="true"></p>
+          <div class="hero-social-proof" aria-hidden="true">
+            <span class="hero-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <span class="hero-users">Over 200+ users</span>
+          </div>
+        </div>
+        <div class="hero-polaroids hero-polaroids-right" aria-hidden="true">
+          <div class="polaroid polaroid-5">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-transfer.png" srcset="assets/screenshot-transfer@2x.png 2x" alt="Transfer in progress" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-6">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-folder.png" srcset="assets/screenshot-folder@2x.png 2x" alt="Saved to folder" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-7">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-session.png" srcset="assets/screenshot-session@2x.png 2x" alt="Session screen" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+          <div class="polaroid polaroid-8">
+            <div class="polaroid-photo">
+              <img src="assets/screenshot-phone2.png" srcset="assets/screenshot-phone2@2x.png 2x" alt="Phone PWA" width="220" height="165" onerror="this.parentElement.classList.add('polaroid-photo--placeholder')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section class="compare-section content-card">
+        <h2 class="section-title">No more workarounds</h2>
+      <ul class="no-more-list">
+        <li>Sending photos to yourself on WhatsApp or Telegram, then saving them one by one on your computer.</li>
+        <li>Creating Discord servers or using bots just to move images from phone to PC.</li>
+        <li>Uploading to Google Drive or Dropbox, opening the app on your computer, then downloading again.</li>
+        <li>Emailing yourself or using random “transfer” sites that upload your photos to someone else’s server.</li>
+      </ul>
+      <div class="instead-block">
+        <p class="instead-label">Instead</p>
+        <p class="instead-text">Open the app on your computer, scan the QR code with your phone, and send. Images land in a folder you choose—no cloud, no extra steps, no re-downloading.</p>
+      </div>
+      </section>
+
+      <section class="desktop-section content-card">
+        <h2 class="desktop-title">QR Photo Transfer for desktop.</h2>
+        <p class="desktop-subtitle">Windows, macOS, and Linux.</p>
+        <div class="desktop-downloads">
+          <div class="download-row">
+            <span class="download-label">Windows</span>
+            <a id="download-windows" href="#" class="btn btn-primary">Download</a>
+          </div>
+          <div class="download-row">
+            <span class="download-label">macOS (Apple Silicon)</span>
+            <a id="download-macos-arm" href="#" class="btn btn-primary">Download</a>
+          </div>
+          <div class="download-row">
+            <span class="download-label">Linux</span>
+            <a id="download-linux" href="#" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+        <div class="what-it-is-block">
+          <h3 class="section-title">What it is</h3>
+          <p class="about-lead">QR Photo Transfer is a desktop app that moves photos and images between your phone and computer over your local network.</p>
+          <p class="about-body">You scan a QR code on your phone, pick or take images, and they appear in a folder on your PC (or the other way around)—no cloud uploads, no extra apps to re-download from, no manual saving from chat or Drive.</p>
+        </div>
+      </section>
+
+      <section class="features-section content-card">
+        <h2 class="section-title">Why QR Photo Transfer</h2>
+        <ul class="features-list">
+          <li><strong>No cloud uploads</strong> — Images go device-to-device; no Google Drive, Dropbox, or email.</li>
+          <li><strong>No chat workarounds</strong> — No need to send to WhatsApp, Discord, or Telegram and re-download.</li>
+          <li><strong>Straight to a folder</strong> — Received images save directly into a folder you choose on your computer.</li>
+          <li><strong>Simple flow</strong> — Scan QR → choose photos → they appear on your PC (or phone).</li>
+          <li><strong>Your network only</strong> — Transfer over your Wi‑Fi; you stay in control of your photos.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="features-block" id="features">
+      <h2 class="block-title">Features</h2>
+      <div class="features-showcase">
+        <div class="features-screenshot-wrap">
+          <div class="features-screenshot-frame">
+            <img id="features-screenshot" src="assets/screenshot-desktop-hires.png" srcset="assets/screenshot-desktop-hires@2x.png 2x" alt="QR Photo Transfer screenshot" class="features-screenshot">
+          </div>
+        </div>
+        <div class="features-summary">
+        <div class="feature-block feature-block-bordered">
+          <h3 class="feature-block-title">Transfer & sessions</h3>
+          <p class="feature-block-desc">Send images either way: phone to PC or PC to phone. Choose direction, then scan the QR or use the link. The desktop shows a QR code (and soon a shareable URL) so you can open the session on your phone—no app store install. Shareable link for each session is in development.</p>
+        </div>
+        <div class="feature-block feature-block-bordered">
+          <h3 class="feature-block-title">On your computer & phone</h3>
+          <ul class="feature-block-list">
+            <li><strong>Computer:</strong> Choose where received files go (e.g. Pictures); default is a “QR Photo Transfer” folder. Light, dark, or system theme; auto-updates with one-click restart and install.</li>
+            <li><strong>Phone (PWA):</strong> Save to Photos/Gallery or download; works in the browser, no app store—add to home screen for an app-like experience.</li>
+          </ul>
+        </div>
+        <div class="feature-block feature-block-bordered">
+          <h3 class="feature-block-title">Premium</h3>
+          <p class="feature-block-desc">Unlimited transfers (free tier: 5 per direction per day). Create temporary QR codes with an expiry you set (e.g. 5–120 minutes)—good for one-off shares or kiosks; the code stops working after the chosen time. Manage your subscription (upgrade, change plan, or cancel) via Stripe’s billing portal.</p>
+        </div>
+        <div class="feature-block feature-block-bordered">
+          <h3 class="feature-block-title">Security & privacy</h3>
+          <p class="feature-block-desc">Images flow device-to-device; we don’t store them on our servers. Sign in (e.g. Google) so only you use your sessions. Only valid session IDs are accepted; expired or invalid links/QRs are rejected.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <h2 class="block-title">FAQ</h2>
+      <div class="faq-accordion">
+        <div class="faq-column">
+          <details class="faq-details">
+            <summary class="faq-summary">What is QR Photo Transfer?</summary>
+            <div class="faq-answer">It’s a desktop app (plus a web app on your phone) that moves images between your phone and computer. You connect by scanning a QR code (or soon, opening a link), then send photos either way—no need to upload to Google Drive, WhatsApp, or Discord and re-download.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">Do I need to install something on my phone?</summary>
+            <div class="faq-answer">No native app. You open a link in your browser (the same link encoded in the QR). You can add that page to your home screen so it behaves like an app.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">Where do the images go on my computer?</summary>
+            <div class="faq-answer">They’re saved in a folder you choose. By default it’s a folder like “QR Photo Transfer” in your Pictures directory; you can change this in the desktop app settings.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">Can I send from computer to phone too?</summary>
+            <div class="faq-answer">Yes. You pick “PC → Phone,” then scan the QR (or open the link) on your phone. Images you select on the desktop are sent to your phone, where you can save to Photos/Gallery or download.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">What are “temporary” QR codes?</summary>
+            <div class="faq-answer">Premium feature. You set an expiry (e.g. 10 or 60 minutes). After that, that QR/link stops working. Good for one-time shares or when you don’t want a long-lived session.</div>
+          </details>
+        </div>
+        <div class="faq-column">
+          <details class="faq-details">
+            <summary class="faq-summary">Will there be a way to transfer without scanning the QR?</summary>
+            <div class="faq-answer">Yes. We’re adding shareable links for each session. You’ll be able to open the same session in your phone browser via a URL, so you can transfer without scanning—e.g. from another device or when you can’t use the camera. Currently in development.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">Is there a limit on how many images I can transfer?</summary>
+            <div class="faq-answer">Free accounts have a limit (e.g. 5 transfers per direction per day). Premium has unlimited transfers. “Transfer” here means one send operation (which can include multiple images in that batch).</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">Are my photos uploaded to your servers?</summary>
+            <div class="faq-answer">Images pass through our backend to connect your phone and computer but are not stored. We don’t keep copies on our servers.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">What do I need to run the desktop app?</summary>
+            <div class="faq-answer">Windows, macOS, or Linux. Download the installer from the website (or GitHub Releases), install, then sign in and follow the in-app steps.</div>
+          </details>
+          <details class="faq-details">
+            <summary class="faq-summary">How do I get Premium?</summary>
+            <div class="faq-answer">In the app, open Profile and use “Upgrade to Premium.” You’ll complete payment in your browser; after that, Premium features (unlimited transfers, temporary QR codes) are available. If the app still shows Free, use “Refresh plan status” or restart the app.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
