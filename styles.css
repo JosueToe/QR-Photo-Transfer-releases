@@ -291,13 +291,20 @@ a:hover {
   align-items: center;
   justify-items: center;
   min-height: 0;
+  position: relative;
 }
 
 @media (min-width: 1100px) {
   .hero-inner {
     grid-template-columns: 1fr minmax(320px, 720px) 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+  .hero-inner {
+    gap: 1rem;
   }
 }
 
@@ -305,6 +312,8 @@ a:hover {
   text-align: center;
   max-width: 720px;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 /* Polaroids – 2x2 scattered (two on top, two on bottom) with overlap */
@@ -312,10 +321,12 @@ a:hover {
   display: none;
   position: relative;
   width: 100%;
-  max-width: 420px;
-  height: 520px;
-  padding: 32px;
+  max-width: clamp(280px, 28vw, 420px);
+  height: clamp(350px, 50vw, 520px);
+  padding: clamp(16px, 2vw, 32px);
   box-sizing: border-box;
+  z-index: 1;
+  overflow: visible;
 }
 
 @media (min-width: 1100px) {
@@ -338,21 +349,117 @@ a:hover {
 .polaroid {
   position: absolute;
   background: #fff;
-  padding: 0.6rem 0.6rem 1.5rem;
+  padding: clamp(0.4rem, 0.5vw, 0.6rem) clamp(0.4rem, 0.5vw, 0.6rem) clamp(1rem, 1.2vw, 1.5rem);
   box-shadow: 0 6px 24px rgba(15, 23, 42, 0.14), 0 10px 40px rgba(15, 23, 42, 0.1);
+  transform-origin: center center;
 }
 
-/* Left cluster – 2 on top, 2 on bottom, scattered with overlap (inset so none get cropped) */
-.hero-polaroids-left .polaroid-1 { top: 0; left: 0; transform: rotate(4deg); z-index: 2; }
-.hero-polaroids-left .polaroid-2 { top: 32px; left: 165px; transform: rotate(-5deg); z-index: 3; }
-.hero-polaroids-left .polaroid-3 { top: 205px; left: 8px; transform: rotate(5deg); z-index: 1; }
-.hero-polaroids-left .polaroid-4 { top: 238px; left: 158px; transform: rotate(-3deg); z-index: 4; }
+/* Left cluster – 2 on top, 2 on bottom, scattered with overlap */
+.hero-polaroids-left .polaroid-1 { 
+  top: 0%; 
+  left: 0%; 
+  transform: rotate(4deg); 
+  z-index: 2; 
+}
 
-/* Right cluster – 2 on top, 2 on bottom, scattered with overlap (inset so none get cropped) */
-.hero-polaroids-right .polaroid-5 { top: 0; right: 0; left: auto; transform: rotate(5deg); z-index: 3; }
-.hero-polaroids-right .polaroid-6 { top: 35px; right: 185px; left: auto; transform: rotate(-4deg); z-index: 2; }
-.hero-polaroids-right .polaroid-7 { top: 210px; right: 25px; left: auto; transform: rotate(4deg); z-index: 1; }
-.hero-polaroids-right .polaroid-8 { top: 243px; right: 178px; left: auto; transform: rotate(-5deg); z-index: 4; }
+.hero-polaroids-left .polaroid-2 { 
+  top: clamp(20px, 6%, 32px); 
+  left: clamp(100px, 39%, 165px); 
+  transform: rotate(-5deg); 
+  z-index: 3; 
+}
+
+.hero-polaroids-left .polaroid-3 { 
+  top: clamp(130px, 39%, 205px); 
+  left: clamp(5px, 2%, 8px); 
+  transform: rotate(5deg); 
+  z-index: 1; 
+}
+
+.hero-polaroids-left .polaroid-4 { 
+  top: clamp(150px, 46%, 238px); 
+  left: clamp(100px, 38%, 158px); 
+  transform: rotate(-3deg); 
+  z-index: 4; 
+}
+
+/* Right cluster – 2 on top, 2 on bottom, scattered with overlap */
+.hero-polaroids-right .polaroid-5 { 
+  top: 0%; 
+  right: 0%; 
+  left: auto; 
+  transform: rotate(5deg); 
+  z-index: 3; 
+}
+
+.hero-polaroids-right .polaroid-6 { 
+  top: clamp(22px, 6.7%, 35px); 
+  right: clamp(120px, 44%, 185px); 
+  left: auto; 
+  transform: rotate(-4deg); 
+  z-index: 2; 
+}
+
+.hero-polaroids-right .polaroid-7 { 
+  top: clamp(135px, 40%, 210px); 
+  right: clamp(15px, 6%, 25px); 
+  left: auto; 
+  transform: rotate(4deg); 
+  z-index: 1; 
+}
+
+.hero-polaroids-right .polaroid-8 { 
+  top: clamp(155px, 47%, 243px); 
+  right: clamp(115px, 45%, 178px); 
+  left: auto; 
+  transform: rotate(-5deg); 
+  z-index: 4; 
+}
+
+/* Dynamic scaling for different screen sizes */
+@media (min-width: 1100px) and (max-width: 1300px) {
+  .hero-polaroids-left .polaroid-1,
+  .hero-polaroids-left .polaroid-2,
+  .hero-polaroids-left .polaroid-3,
+  .hero-polaroids-left .polaroid-4,
+  .hero-polaroids-right .polaroid-5,
+  .hero-polaroids-right .polaroid-6,
+  .hero-polaroids-right .polaroid-7,
+  .hero-polaroids-right .polaroid-8 {
+    transform: scale(0.8);
+  }
+  
+  .hero-polaroids-left .polaroid-1 { transform: scale(0.8) rotate(4deg); }
+  .hero-polaroids-left .polaroid-2 { transform: scale(0.8) rotate(-5deg); }
+  .hero-polaroids-left .polaroid-3 { transform: scale(0.8) rotate(5deg); }
+  .hero-polaroids-left .polaroid-4 { transform: scale(0.8) rotate(-3deg); }
+  .hero-polaroids-right .polaroid-5 { transform: scale(0.8) rotate(5deg); }
+  .hero-polaroids-right .polaroid-6 { transform: scale(0.8) rotate(-4deg); }
+  .hero-polaroids-right .polaroid-7 { transform: scale(0.8) rotate(4deg); }
+  .hero-polaroids-right .polaroid-8 { transform: scale(0.8) rotate(-5deg); }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .hero-polaroids-left .polaroid-1,
+  .hero-polaroids-left .polaroid-2,
+  .hero-polaroids-left .polaroid-3,
+  .hero-polaroids-left .polaroid-4,
+  .hero-polaroids-right .polaroid-5,
+  .hero-polaroids-right .polaroid-6,
+  .hero-polaroids-right .polaroid-7,
+  .hero-polaroids-right .polaroid-8 {
+    transform: scale(0.9);
+  }
+  
+  .hero-polaroids-left .polaroid-1 { transform: scale(0.9) rotate(4deg); }
+  .hero-polaroids-left .polaroid-2 { transform: scale(0.9) rotate(-5deg); }
+  .hero-polaroids-left .polaroid-3 { transform: scale(0.9) rotate(5deg); }
+  .hero-polaroids-left .polaroid-4 { transform: scale(0.9) rotate(-3deg); }
+  .hero-polaroids-right .polaroid-5 { transform: scale(0.9) rotate(5deg); }
+  .hero-polaroids-right .polaroid-6 { transform: scale(0.9) rotate(-4deg); }
+  .hero-polaroids-right .polaroid-7 { transform: scale(0.9) rotate(4deg); }
+  .hero-polaroids-right .polaroid-8 { transform: scale(0.9) rotate(-5deg); }
+}
 
 .polaroid-photo {
   background: #e2e8f0;
@@ -387,7 +494,7 @@ a:hover {
   letter-spacing: 0.04em;
 }
 
-/* All polaroids same size – larger so screenshots are readable */
+/* All polaroids same size – larger so screenshots are readable, dynamically sized */
 .hero-polaroids-left .polaroid-1 .polaroid-photo,
 .hero-polaroids-left .polaroid-2 .polaroid-photo,
 .hero-polaroids-left .polaroid-3 .polaroid-photo,
@@ -396,8 +503,8 @@ a:hover {
 .hero-polaroids-right .polaroid-6 .polaroid-photo,
 .hero-polaroids-right .polaroid-7 .polaroid-photo,
 .hero-polaroids-right .polaroid-8 .polaroid-photo {
-  width: 220px;
-  height: 165px;
+  width: clamp(150px, 15vw, 220px);
+  height: clamp(112px, 11.25vw, 165px);
 }
 
 .polaroid-photo img {
@@ -808,7 +915,8 @@ a:hover {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
-  min-height: 400px;
+  min-height: 300px;
+  max-height: 600px;
 }
 
 .features-screenshot-frame {
@@ -821,15 +929,32 @@ a:hover {
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12), 0 16px 64px rgba(15, 23, 42, 0.08);
   overflow: hidden;
   aspect-ratio: 4 / 5;
+  max-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media (min-width: 640px) {
+  .features-screenshot-wrap {
+    min-height: 350px;
+    max-height: 650px;
+  }
+  
+  .features-screenshot-frame {
+    max-height: 650px;
+  }
+}
+
 @media (min-width: 1000px) {
+  .features-screenshot-wrap {
+    max-height: none;
+  }
+  
   .features-screenshot-frame {
     height: 100%;
     aspect-ratio: auto;
+    max-height: none;
   }
 }
 
@@ -868,11 +993,18 @@ a:hover {
   display: grid;
   gap: 1.5rem;
   width: 100%;
+  align-items: start;
 }
 
 @media (min-width: 640px) {
   .features-summary {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .features-summary {
+    align-items: stretch;
   }
 }
 
@@ -893,6 +1025,8 @@ a:hover {
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.15);
   box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Feature blocks with blue animated border (like top cards) */
@@ -902,6 +1036,9 @@ a:hover {
   background: none;
   border: none;
   padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .feature-block-bordered::before {
@@ -1093,14 +1230,20 @@ a:hover {
   }
 
   .features-screenshot-wrap {
-    min-height: 300px;
+    min-height: 250px;
+    max-height: 500px;
   }
 
   .features-screenshot-frame {
     padding: 0.75rem;
+    max-height: 500px;
   }
 
   .feature-block {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .feature-block-bordered {
     padding: 1.5rem 1.25rem;
   }
 
