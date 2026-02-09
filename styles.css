@@ -822,6 +822,21 @@ a:hover {
   font-weight: 600;
 }
 
+.features-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.features-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+}
+
 .desktop-title {
   font-size: 1.5rem;
   font-weight: 800;
