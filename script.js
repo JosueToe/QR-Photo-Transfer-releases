@@ -65,9 +65,9 @@
 
   var TAGLINES = [
     "From phone to computer, no cloud in between.",
-    "Scan. Send. Done. No WhatsApp, no Drive, no re-downloading.",
-    "Your photos. Your network. Straight to your computer.",
-    "Stop uploading to the cloud just to get images on your PC.",
+    "Photos, videos, and text—sent in seconds, not emails.",
+    "Your files. Your network. Straight to your computer.",
+    "Stop uploading to the cloud just to get things on your PC.",
     "Phone → QR code → computer. No Discord bots, no Google Drive, no hassle."
   ];
 
@@ -91,51 +91,15 @@
     setInterval(next, 4200);
   }
 
-  var SCREENSHOTS = [
-    { src: "assets/screenshot-desktop-hires.png", srcset: "assets/screenshot-desktop-hires.png 2x", alt: "QR Photo Transfer desktop app" },
-    { src: "assets/screenshot-phone-hires.png", srcset: "assets/screenshot-phone-hires.png 2x", alt: "QR Photo Transfer on phone" },
-    { src: "assets/screenshot-qr-hires.png", srcset: "assets/screenshot-qr-hires.png 2x", alt: "QR code session" },
-    { src: "assets/screenshot-desktop2-hires.png", srcset: "assets/screenshot-desktop2-hires.png 2x", alt: "Desktop app window" },
-    { src: "assets/screenshot-transfer-hires.png", srcset: "assets/screenshot-transfer-hires.png 2x", alt: "Transfer in progress" },
-    { src: "assets/screenshot-folder-hires.png", srcset: "assets/screenshot-folder-hires.png 2x", alt: "Saved to folder" },
-    { src: "assets/screenshot-session-hires.png", srcset: "assets/screenshot-session-hires.png 2x", alt: "Session screen" },
-    { src: "assets/screenshot-phone2-hires.png", srcset: "assets/screenshot-phone2-hires.png 2x", alt: "Phone PWA" }
-  ];
-
-  function runScreenshotRotator() {
-    var el = document.getElementById("features-screenshot");
-    if (!el || SCREENSHOTS.length < 2) return;
-    var index = 0;
-    var duration = 600;
-    function next() {
-      el.classList.add("screenshot-out");
-      setTimeout(function () {
-        index = (index + 1) % SCREENSHOTS.length;
-        var screenshot = SCREENSHOTS[index];
-        el.src = screenshot.src;
-        el.srcset = screenshot.srcset;
-        el.alt = screenshot.alt;
-        el.classList.remove("screenshot-out");
-        el.classList.add("screenshot-in");
-        setTimeout(function () {
-          el.classList.remove("screenshot-in");
-        }, duration);
-      }, duration);
-    }
-    setInterval(next, 3500);
-  }
-
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       applyHeroButton();
       wireDesktopLinks();
       runTaglineRotator();
-      runScreenshotRotator();
     });
   } else {
     applyHeroButton();
     wireDesktopLinks();
     runTaglineRotator();
-    runScreenshotRotator();
   }
 })();
