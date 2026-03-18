@@ -33,13 +33,13 @@
       url = releaseUrls.windows;
       caption = "";
     } else if (os === "macos") {
-      label = "Download for macOS";
+      label = "Download for macOS (Beta)";
       url = releaseUrls.macosArm;
-      caption = "Optimized for Apple Silicon";
+      caption = "Apple Silicon beta build (may have bugs)";
     } else {
-      label = "Download for Linux";
+      label = "Download for Linux (Beta)";
       url = releaseUrls.linux;
-      caption = "";
+      caption = "Linux beta build (may have bugs)";
     }
 
     heroBtn.textContent = label;
